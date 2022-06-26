@@ -13,6 +13,7 @@ import imagelogo from "../../Assets/dociallogo.png"
 import colors from '../../Configs/colors'
 import LoggedInRoutes from '../../Routes/Routes'
 import CountDown from '../AppBarsComponents/CountDown'
+import addressHelper from '../../Utils/addressHelper'
 
 function AppBarTop() {
   const [address, setAddress] = useState("")
@@ -88,9 +89,15 @@ function AppBarTop() {
           </Link>
           </Box>
         </HStack>
-        <Box pr={7}>
-          <Button bgColor="yellow.500" onClick={() => handleLogin()}>Connect Your Wallet</Button>
+        {address ? (
+         <Box pr={7}>
+         <Button bgColor="#FF9F29" onClick={() => handleLogin()} > {addressHelper(address)}</Button>
+       </Box>
+        ) : (
+          <Box pr={7}>
+          <Button bgColor="#FF9F29" onClick={() => handleLogin()}>Connect Your Wallet</Button>
         </Box>
+        )}
     </Stack>
   </Box>
   )

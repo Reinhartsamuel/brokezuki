@@ -10,7 +10,7 @@ const MintingPages = () => {
     <>
     <AppBarTop />
     <AppBarMinting />
-    <AppBarFooter />
+    {/* <AppBarFooter /> */}
     </>
   )
 }
